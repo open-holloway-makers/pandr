@@ -7,10 +7,12 @@ GET     /                           controllers.Application.index()
 GET     /projects                   controllers.Application.getProject()
 GET     /list                       controllers.Application.list()
 GET     /signup                     controllers.Application.signup()
+GET     /projects/create            controllers.Application.createProject()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 GET     /api/test                       controllers.TestController.test()
 GET     /api/login                      controllers.LoginController.login(username: String)
-GET     /api/user/create                controllers.UserController.addUser(username: String, firstName: String, surname: String, email: String)
+POST    /api/user/create                controllers.UserController.addUser(username: String, firstName: String, surname: String, email: String)
+POST    /api/project/create             controllers.ProjectController.addProject(name: String, desc: String, lang: String, link: String)

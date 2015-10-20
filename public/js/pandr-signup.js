@@ -10,7 +10,7 @@ $('#signup-button').click(function() {
   var emailParam = '&email=' + email;
 
   if (username) {
-    $.get('/api/user/create' + usernameParam + firstnameParam + 
+    $.post('/api/user/create' + usernameParam + firstnameParam + 
         surnameParam + emailParam, function(data) {
       if (data === true) {
         window.location.replace("/");

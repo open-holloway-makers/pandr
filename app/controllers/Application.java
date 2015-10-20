@@ -24,6 +24,10 @@ public class Application extends Controller {
       return ok(signup.render());
     }
 
+    public Result createProject() {
+      return ok(createproject.render());
+    }
+
     public Result getProject(){
         ArrayList<Project> proj = new ArrayList<Project>();
 
