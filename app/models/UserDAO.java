@@ -6,6 +6,10 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.types.BasicBSONList;
 
+import java.util.ArrayList;
+
+import static com.mongodb.client.model.Filters.eq;
+
 /**
  * Created by vasua on 20/10/2015.
  */
@@ -33,21 +37,38 @@ public class UserDAO {
             ownedProjects.add(user.getRightSwipes().get(i));
         }
 
-        Document doc = new Document("_id", 1)
-                .append("username", user.getUsername())
+        Document doc = new Document("username", user.getUsername())
                 .append("firstname", user.getFirstName())
                 .append("surname", user.getSurname())
                 .append("email", user.getEmail())
                 .append("ownedProjects", ownedProjects)
                 .append("rightSwipes", rightSwipes);
 
-        System.out.println(doc.toJson());
+        //System.out.println(doc.toJson());
 
         collection.insertOne(doc);
     }
 
-    public void addNewOwnedProject(Project project) {
-        
-    }
-
+//    public void addNewOwnedProject(User user, Project project) {
+//        collection.updateOne(eq("username", user.getUsername()),
+//                new Document("$set", new Document("ownedProjects", projectsToBSON(user, project))));
+//
+//    }
+//
+//
+//    private BasicBSONList projectsToBSON(User user, Project project) {
+//        Document document = collection.find(eq("username", user.getUsername())).first();
+//        ArrayList<Project> ownedProjects = (ArrayList<Project>) document.get("ownedProjects");
+//
+//        BasicBSONList projects = new BasicBSONList();
+//        for (int i = 0; i < ownedProjects.size(); i++) {
+//            projects.add(new Project(ownedProjects.get(i).name,
+//                    ownedProjects.get(i).desc,
+//                    ownedProjects.get(i).lang,
+//                    ownedProjects.get(i).link,
+//                    ownedProjects.get(i).owner));
+//        }
+//        System.out.println(projects.toString());
+//        return projects;
+//    }
 }

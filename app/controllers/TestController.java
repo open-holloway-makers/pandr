@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Project;
 import models.User;
 import models.UserDAO;
 import play.*;
@@ -14,6 +15,10 @@ public class TestController extends Controller {
     UserDAO userDAO = new UserDAO();
     User testUser = new User("testUser", "test", "user", "testuser@email.com");
     userDAO.insertUser(testUser);
+
+    Project testProject = new Project("testProject","This is a test project", "Java", "TestProject.org", testUser);
+
+//    userDAO.addNewOwnedProject(testUser, testProject);
     return ok("Test has been run"); // or whatever
   }
 }

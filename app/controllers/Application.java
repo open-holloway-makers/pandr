@@ -1,14 +1,12 @@
 package controllers;
 
-import play.*;
-import play.mvc.*;
-import play.libs.Json;
-
-import views.html.*;
 import models.Project;
+import models.User;
+import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.*;
 
 import java.util.ArrayList;
-import java.lang.Double;
 
 public class Application extends Controller {
 
@@ -31,17 +29,9 @@ public class Application extends Controller {
     public Result getProject(){
         ArrayList<Project> proj = new ArrayList<Project>();
 
-        Project p = new Project("buffalo sim");
-        p.desc = "serengeti buffalo are deadly";
-        p.lang = "Java";
-        p.link = "github.com";
-        p.owner = "pandr";
+        Project p = new Project("buffalo sim", "serengeti buffalo are deadly", "Java", "github.com", new User("test", "test1", "test2", "test3"));
 
-        Project p1 = new Project("buffalo sim 2");
-        p1.desc = "serengeti buffalo are deadly";
-        p1.lang = "Java";
-        p1.link = "github.com";
-        p1.owner = "pandr";
+        Project p1 = new Project("buffalo sim 2", "serengeti buffalo are deadly", "Java", "github.com", new User("test", "test1", "test2", "test3"));
 
         proj.add(p);
         proj.add(p1);
