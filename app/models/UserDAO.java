@@ -33,18 +33,21 @@ public class UserDAO {
             ownedProjects.add(user.getRightSwipes().get(i));
         }
 
-        Document doc = new Document("username", user.getUsername())
+        Document doc = new Document("_id", 1)
+                .append("username", user.getUsername())
                 .append("firstname", user.getFirstName())
                 .append("surname", user.getSurname())
                 .append("email", user.getEmail())
                 .append("ownedProjects", ownedProjects)
                 .append("rightSwipes", rightSwipes);
 
+        System.out.println(doc.toJson());
+
         collection.insertOne(doc);
     }
 
     public void addNewOwnedProject(Project project) {
-
+        
     }
 
 }
