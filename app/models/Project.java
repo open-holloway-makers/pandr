@@ -8,10 +8,14 @@ public class Project {
   public String desc;
   public String lang;
   public String link;
-  public String owner;
+  public User owner;
 
-  public Project(String n) {
-    name = n;
+  public Project(String name, String desc, String lang, String link, User owner) {
+    this.name = name;
+    this.desc = desc;
+    this.lang = lang;
+    this.link = link;
+    this.owner = owner;
   }
 
   // http://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
