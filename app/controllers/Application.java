@@ -16,6 +16,10 @@ public class Application extends Controller {
         return ok(index.render());
     }
 
+    public Result list() {
+      return ok(list.render());
+    }
+
     public Result getProject(){
         ArrayList<Project> proj = new ArrayList<Project>();
 
