@@ -34,7 +34,7 @@ public class UserDAO {
 
         BasicBSONList rightSwipes = new BasicBSONList();
         for (int i = 0; i < user.getRightSwipes().size(); i++) {
-            ownedProjects.add(user.getRightSwipes().get(i));
+            rightSwipes.add(user.getRightSwipes().get(i));
         }
 
         Document doc = new Document("username", user.getUsername())

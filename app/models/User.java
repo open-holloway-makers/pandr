@@ -8,23 +8,22 @@ import java.util.ArrayList;
 
 public class User {
 
-    private int _id;
-    private String username;
-    private String firstName;
-    private String surname;
-    private String email;
+    public int    _id;
+    public String username;
+    public String firstName;
+    public String surname;
+    public String email;
 
-    private ArrayList<Project> ownedProjects;
-
-    private ArrayList<Project> rightSwipes;
+    public ArrayList<Project> ownedProjects;
+    public ArrayList<Project> rightSwipes;
 
     public User(String username, String firstName, String surname, String email) {
-        this.username = username;
+        this.username  = username;
         this.firstName = firstName;
-        this.surname = surname;
-        this.email = email;
-        ownedProjects = new ArrayList<>();
-        rightSwipes = new ArrayList<>();
+        this.surname   = surname;
+        this.email     = email;
+        ownedProjects  = new ArrayList<>();
+        rightSwipes    = new ArrayList<>();
     }
 
     public void addOwnedProject(Project project) {
