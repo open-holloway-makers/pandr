@@ -4,4 +4,32 @@
   background-color: green;
 }
 
+body {
+  font-family: Helvetica, Verdana, sans-serif;
+}
 
+.pandr-header {
+  font-style: bold;
+}
+
+.pandr-border {
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #FF3300;
+  box-shadow: 0 5px 5px #AAA;
+}
+
+.pandr-login {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.pandr-content {
+  background-color: #FFF;
+}
+
+.pandr-footer {
+
+}

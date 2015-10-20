@@ -8,3 +8,9 @@ $('#theDiv').click(function() {
   }
   toggle = !toggle;
 });
+
+$('#test-button').click(function() {
+  $.get('/test', function(data) { 
+    console.log(data);
+  });
+});

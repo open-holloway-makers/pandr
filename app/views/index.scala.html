@@ -2,12 +2,38 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="@routes.Assets.versioned("js/pandr.js")" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/main.css")">
   </head>
   <body>
-    <h1>This is the Pandr project!</h1>
-    This is... the div! To check javascript is all working:
-    <div id="the-div"></div>
+    <div class="container-fluid">
+      
+      <div class="row">
+        <div class="col-xs-12 pandr-header pandr-border">
+          <h1>Pandr</h1>
+          Find projects near you.
+        </div>
+      </div>
+
+      <div class="pandr-content pandr-login">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="username-input">Username:</label>
+              <input type="text" class="form-control" id="username-input">
+            </div>
+            <button id="login-button" class="btn btn-default" type="submit">Login</button><br/>
+            <button id="test-button" class="btn btn-default" type="submit">Test</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 pandr-footer">
+        </div>
+      </div>
+    </div>
+    <script src="@routes.Assets.versioned("js/pandr.js")" type="text/javascript"></script>
   </body>
 </html>
