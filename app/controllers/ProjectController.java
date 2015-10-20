@@ -11,11 +11,9 @@ public class ProjectController extends Controller {
   public Result addProject(String name, String desc, String lang, String link) {
 
     String username = session("username");
-    Project newProject = new Project(name);
-    newProject.desc = desc;
-    newProject.lang = lang;
-    newProject.link = link;
-    newProject.owner = username;
+    // Request User from database and replace it with the null down here->
+
+    Project newProject = new Project(name, desc, lang, link, null);
    
     // Save project to database etc...
 
