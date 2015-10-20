@@ -2,9 +2,13 @@ package models;
 
 public class Project {
 
-  private String name;
+  public String name;
+  public String desc;
+  public String lang;
+  public String link;
+  public String owner;
 
-  public Project() {
-
+  public Project(String n) {
+    name = n;
   }
 }
