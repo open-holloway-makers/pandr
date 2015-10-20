@@ -20,6 +20,10 @@ public class Application extends Controller {
       return ok(list.render());
     }
 
+    public Result signup() {
+      return ok(signup.render());
+    }
+
     public Result getProject(){
         ArrayList<Project> proj = new ArrayList<Project>();
 
