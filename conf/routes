@@ -8,6 +8,9 @@ GET     /projects                   controllers.Application.getProject()
 GET     /list                       controllers.Application.list()
 GET     /signup                     controllers.Application.signup()
 GET     /projects/create            controllers.Application.createProject()
+GET     /projects/find              controllers.Application.findProject()
+
+GET     /api/find                   controllers.Application.fetchProject()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

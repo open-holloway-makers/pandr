@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Project;
+import models.ProjectDAO;
 import models.User;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -26,6 +27,10 @@ public class Application extends Controller {
       return ok(createproject.render());
     }
 
+    public Result findProject(){
+        return ok(find_project.render());
+    }
+
     public Result getProject(){
         ArrayList<Project> proj = new ArrayList<Project>();
 
@@ -39,6 +44,11 @@ public class Application extends Controller {
         double dist = Project.distanceBetween(51.426172, -0.5643574, 77.620631, -44.749166);
 
         return ok(Double.toString(dist));
+    }
+
+    public Result fetchProject(){
+        return ok(ProjectDAO.retreiveRandomProject());
+        // return ok("wut");
     }
 
 }

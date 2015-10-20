@@ -23,6 +23,6 @@ public class TestController extends Controller {
     ProjectDAO.addNewProject(testProject);
 
 //    userDAO.addNewOwnedProject(testUser, testProject);
-    return ok("Test has been run"); // or whatever
+    return ok("Test has beenn run"); // or whatever
   }
 }

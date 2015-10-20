@@ -1,5 +1,11 @@
 package models;
 
+import play.libs.Json;
+
+import com.mongodb.client.FindIterable;
+
+import com.fasterxml.jackson.databind.JsonNode;
+
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -24,11 +30,16 @@ public class ProjectDAO{
                 .append("link", project.link)
                 .append("owner", project.owner.username);
 
-    // System.out.println(doc.toJson());
+    System.out.println(doc.toJson());
     collection.insertOne(doc);
   }
 
-  public void retreiveAllProjects(){
+  public static JsonNode retreiveRandomProject(){
+    System.out.println("Retreiving random project...");
 
+    FindIterable<Document> result = collection.find();
+    System.out.println(result.first());
+
+    return Json.toJson(result.first());
   }
 }
