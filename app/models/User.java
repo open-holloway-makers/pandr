@@ -11,66 +11,20 @@ public class User {
     public int    _id;
     public String username;
     public String firstName;
-    public String surname;
+    public String lastName;
     public String email;
 
     public ArrayList<Project> ownedProjects;
-    public ArrayList<Project> rightSwipes;
+    public ArrayList<Project> likedProjects;
+    public ArrayList<Project> dislikedProjects;
 
-    public User(String username, String firstName, String surname, String email) {
-        this.username  = username;
-        this.firstName = firstName;
-        this.surname   = surname;
-        this.email     = email;
-        ownedProjects  = new ArrayList<>();
-        rightSwipes    = new ArrayList<>();
-    }
-
-    public void addOwnedProject(Project project) {
-        ownedProjects.add(project);
-    }
-
-    public void addRightSwipe(Project project) {
-        rightSwipes.add(project);
-    }
-
-    public int get_id() {
-        return _id;
-    }
-
-    public void set_id(int _id) {
-        this._id = _id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public ArrayList<Project> getOwnedProjects() {
-        return ownedProjects;
-    }
-
-    public ArrayList<Project> getRightSwipes() {
-        return rightSwipes;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getEmail() {
-        return email;
+    public User(String uName, String fName, String lName, String e) {
+        username         = uName;
+        firstName        = fName;
+        lastName         = lName;
+        email            = e;
+        ownedProjects    = new ArrayList<>();
+        likedProjects    = new ArrayList<>();
+        dislikedProjects = new ArrayList<>();
     }
 }

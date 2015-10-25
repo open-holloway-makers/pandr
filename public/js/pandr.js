@@ -20,8 +20,24 @@ $('#login-button').click(function() {
   }
 });
 
+$('#signup-button').click(function (){
+  var username  = $('#username-input').val();
+  var firstname = $('#firstname-input').val();
+  var lastname  = $('surname-input').val();
+  var email     = $('email-input').val();
+
+  if(username){
+    $.get('/api/user/create?username=' + username + '&firstName=' + firstname + '&lastName=' + lastname + '&email=' + email, function(data){
+      console.log('registered');
+
+      window.location.replace('/login');
+    });
+  }
+});
+
 $('#test-button').click(function() {
   $.get('/api/test', function(data) { 
     console.log(data);
   });
 });
+

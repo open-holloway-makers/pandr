@@ -6,14 +6,16 @@ public class Project {
 
   public String name;
   public String desc;
-  public String lang;
+  public String category;
   public String link;
   public User owner;
+  public double longitude;
+  public double latitude;
 
-  public Project(String name, String desc, String lang, String link, User owner) {
+  public Project(String name, String desc, String cat, String link, User owner) {
     this.name = name;
     this.desc = desc;
-    this.lang = lang;
+    this.category = cat;
     this.link = link;
     this.owner = owner;
   }
@@ -30,8 +32,9 @@ public class Project {
     double dLong = Math.toRadians(endLongitude - startLongitude);
 
     double a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
-            Math.cos(Math.toRadians(startLatitude)) * Math.cos(Math.toRadians(endLatitude)) *
-            Math.sin(dLong/2) * Math.sin(dLong/2);
+               Math.cos(Math.toRadians(startLatitude)) * 
+               Math.cos(Math.toRadians(endLatitude)) *
+               Math.sin(dLong/2) * Math.sin(dLong/2);
 
     double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     double d = earthRadius * c;

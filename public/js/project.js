@@ -10,4 +10,12 @@ $('#refresh-proj').click(function() {
   });
 });
 
+$('#near-project').click(function(){
+    console.log("find project near you");
+    $.get('/api/find', function( data ){
+        console.log(data);
+    });
+
+});
+
 

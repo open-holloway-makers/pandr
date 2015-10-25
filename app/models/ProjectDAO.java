@@ -26,7 +26,7 @@ public class ProjectDAO{
     System.out.println(collection.find());
     Document doc = new Document("name", project.name)
                 .append("desc", project.desc)
-                .append("lang", project.lang)
+                .append("category", project.category)
                 .append("link", project.link)
                 .append("owner", project.owner.username);
 
